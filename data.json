@@ -61,5 +61,33 @@
     "feed": "https://notes.jim-nielsen.com/feed.xml",
     "description": "A web designer, developer, & blogger. Writes about tech and internet culture.",
     "tags": ["tech"]
+  },
+  {
+    "name": "Annie",
+    "url": "https://anniemueller.com/",
+    "feed": "https://anniemueller.com/posts_feed",
+    "description": "She writes personal essays, observations, and funny pieces.",
+    "tags": ["fun"]
+  },
+  {
+    "name": "Simon Willson",
+    "url": "https://simonwillison.net/",
+    "feed": "https://simonwillison.net/tags/blogging.atom",
+    "description": "Simon is a great techie. He tinkers with new technology and talks about it.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Kailash Nadh",
+    "url": "https://nadh.in/",
+    "feed": "https://nadh.in/index.xml",
+    "description": "Writes about the tech world. Creates tech with an upright spine.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Jeff Kaufman",
+    "url": "https://www.jefftk.com/",
+    "feed": "https://www.jefftk.com/news.rss",
+    "description": "A tech guy who often writes about topics nobody writes about.",
+    "tags": ["tech"]
   }
 ]
