@@ -1,30 +1,30 @@
 [
   {
-    "name": "Deepakness",
+    "name": "Deepak",
     "url": "https://deepakness.com/",
     "feed": "https://deepakness.com/feed/archive.xml",
-    "description": "Ramblings on mechanical keyboards, pure CSS art, and living offline.",
-    "tags": ["tech", "minimalism"]
+    "description": "Tech guy who tinkers with products, build small projects, and shares his learnings",
+    "tags": ["tech"]
   },
   {
     "name": "Derek Sivers",
     "url": "https://sive.rs",
-    "feed": "",
-    "description": "Baking bread and archiving handwritten family recipes.",
-    "tags": ["food", "analog"]
+    "feed": "https://sive.rs/en.atom",
+    "description": "Thinks everything from scartch. Lives an interesting life.",
+    "tags": ["life"]
   },
   {
     "name": "Herman Martinus",
     "url": "https://herman.bearblog.dev/",
     "feed": "https://codeandpoetry.org/feed",
-    "description": "Generative art created using ancient programming languages.",
-    "tags": ["art", "tech", "poetry"]
+    "description": "Creator of bearblog. Writes about tech and other general things.",
+    "tags": ["blogging", "tech"]
   },
   {
-    "name": "The Slow Web",
-    "url": "https://theslowweb.com",
-    "feed": "https://theslowweb.com/rss",
-    "description": "An essay collection on why websites should load in under 1MB.",
-    "tags": ["minimalism", "essays"]
+    "name": "James",
+    "url": "https://jamesg.blog/",
+    "feed": "https://jamesg.blog/feeds/posts.xml",
+    "description": "Blogs about indieweb, tech, and other small things he observes",
+    "tags": ["tech", "blogging"]
   }
 ]
