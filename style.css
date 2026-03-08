@@ -1,0 +1,148 @@
+/* =========================================
+   CSS: STRUCTURAL & SPATIAL STYLING
+   ========================================= */
+body {
+  /* 65ch is the typographic gold standard for reading comfort */
+  max-width: 65ch; 
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+.site-logo {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  text-decoration: underline;
+}
+
+.site-nav {
+  margin-top: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.site-nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sticky filter navigation */
+#tag-nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 2rem;
+  line-height: 2.5; 
+  z-index: 10;
+}
+
+.tag-btn {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Native visual feedback for the currently selected filter */
+.tag-btn:disabled {
+  cursor: default;
+}
+
+.site-item {
+  margin-bottom: 2.5rem;
+}
+
+/* Flexbox guarantees perfect horizontal alignment */
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 12px; 
+  margin-bottom: 0.4rem;
+}
+
+.site-item h3 {
+  font-size: 1.8rem; 
+  margin: 0;
+}
+
+.favicon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px; 
+}
+
+/* Squeeze the native button padding down so it acts like a small tag */
+.rss-btn {
+  cursor: pointer;
+  font-size: 0.7rem; 
+  padding: 2px 6px; 
+  line-height: 1.2; 
+  align-self: center; 
+}
+
+.site-item p {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 2px dashed #000;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   CSS: OS-LEVEL DARK MODE
+   ========================================= */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  .site-nav {
+    border-color: #333;
+  }
+
+  #tag-nav {
+    background-color: #121212;
+    border-bottom: 1px solid #333; 
+  }
+
+  a {
+    color: #bb86fc; 
+  }
+  
+  a:visited {
+    color: #9c27b0; 
+  }
+
+  button {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #555;
+  }
+
+  .tag-btn:disabled {
+    background-color: #121212;
+    color: #777;
+    border-color: #333;
+  }
+
+  button:focus-visible, a:focus-visible {
+    outline-color: #e0e0e0;
+  }
+}

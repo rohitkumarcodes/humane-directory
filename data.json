@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Deepakness",
+    "url": "https://deepakness.com/",
+    "feed": "https://deepakness.com/feed/archive.xml",
+    "description": "Ramblings on mechanical keyboards, pure CSS art, and living offline.",
+    "tags": ["tech", "minimalism"]
+  },
+  {
+    "name": "Derek Sivers",
+    "url": "https://sive.rs",
+    "feed": "",
+    "description": "Baking bread and archiving handwritten family recipes.",
+    "tags": ["food", "analog"]
+  },
+  {
+    "name": "Herman Martinus",
+    "url": "https://herman.bearblog.dev/",
+    "feed": "https://codeandpoetry.org/feed",
+    "description": "Generative art created using ancient programming languages.",
+    "tags": ["art", "tech", "poetry"]
+  },
+  {
+    "name": "The Slow Web",
+    "url": "https://theslowweb.com",
+    "feed": "https://theslowweb.com/rss",
+    "description": "An essay collection on why websites should load in under 1MB.",
+    "tags": ["minimalism", "essays"]
+  }
+]
