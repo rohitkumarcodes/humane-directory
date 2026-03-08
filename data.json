@@ -3,7 +3,7 @@
     "name": "Deepak",
     "url": "https://deepakness.com/",
     "feed": "https://deepakness.com/feed/archive.xml",
-    "description": "Tech guy who tinkers with products, build small projects, and shares his learnings",
+    "description": "Tech guy who tinkers with products, builds small projects, and shares his learnings",
     "tags": ["tech"]
   },
   {
@@ -16,7 +16,7 @@
   {
     "name": "Herman Martinus",
     "url": "https://herman.bearblog.dev/",
-    "feed": "https://codeandpoetry.org/feed",
+    "feed": "https://herman.bearblog.dev/feed/",
     "description": "Creator of bearblog. Writes about tech and other general things.",
     "tags": ["blogging", "tech"]
   },
@@ -30,7 +30,7 @@
   {
     "name": "Manuel Moreale",
     "url": "https://manuelmoreale.com/",
-    "feed": "https://manuelmoreale.com/feed",
+    "feed": "https://manuelmoreale.com/feed/rss",
     "description": "Creator of the People and Blogs series. Writes about the web, tech, little observations.",
     "tags": ["tech", "blogging"]
   },
@@ -39,6 +39,13 @@
     "url": "https://rohit.online/",
     "feed": "https://rohit.online/feed",
     "description": "It's me. Creator of humane.directory.",
-    "tags": ["tech", "blogging"]
+    "tags": ["life"]
+  },
+  {
+    "name": "Anil Dash",
+    "url": "https://www.anildash.com/",
+    "feed": "https://www.anildash.com/feed.xml",
+    "description": "writer trying to make the technology world more thoughtful, creative and humane.",
+    "tags": ["tech"]
   }
 ]
