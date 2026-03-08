@@ -54,5 +54,12 @@
     "feed": "https://blog.jim-nielsen.com/feed.xml",
     "description": "A web designer, developer, & blogger. Writes about tech and internet culture.",
     "tags": ["tech"]
+  },
+  {
+    "name": "Jim Nielsen (notes)",
+    "url": "https://notes.jim-nielsen.com/",
+    "feed": "https://notes.jim-nielsen.com/feed.xml",
+    "description": "A web designer, developer, & blogger. Writes about tech and internet culture.",
+    "tags": ["tech"]
   }
 ]
