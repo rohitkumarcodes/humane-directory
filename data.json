@@ -3,7 +3,7 @@
     "name": "Deepak",
     "url": "https://deepakness.com/",
     "feed": "https://deepakness.com/feed/archive.xml",
-    "description": "Tech guy who tinkers with products, builds small projects, and shares his learnings",
+    "description": "Tech guy who tinkers with products, builds projects, and shares his learnings.",
     "tags": ["tech"]
   },
   {
@@ -45,7 +45,14 @@
     "name": "Anil Dash",
     "url": "https://www.anildash.com/",
     "feed": "https://www.anildash.com/feed.xml",
-    "description": "writer trying to make the technology world more thoughtful, creative and humane.",
+    "description": "A writer trying to make the technology world more thoughtful, creative and humane.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Jim Nielsen",
+    "url": "https://blog.jim-nielsen.com/",
+    "feed": "https://blog.jim-nielsen.com/feed.xml",
+    "description": "A web designer, developer, & blogger. Writes about tech and internet culture.",
     "tags": ["tech"]
   }
 ]

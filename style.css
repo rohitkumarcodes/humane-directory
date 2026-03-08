@@ -14,6 +14,19 @@ header {
   margin-bottom: 2rem;
 }
 
+.page-header-copy p {
+  margin-bottom: 0.5rem;
+}
+
+.header-list {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.header-list li + li {
+  margin-top: 0.2rem;
+}
+
 .site-logo {
   color: inherit;
   text-decoration: none;
@@ -29,8 +42,15 @@ header {
   padding-bottom: 1rem;
 }
 
+.site-nav-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .site-nav a {
-  margin-right: 1rem;
   text-decoration: none;
   font-weight: bold;
 }
@@ -75,7 +95,7 @@ header {
 }
 
 .site-item h3 {
-  font-size: 1.8rem; 
+  font-size: 1.45rem;
   margin: 0;
 }
 

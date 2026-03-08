@@ -8,12 +8,25 @@
 </head>
 <body>
 
-  <header>
-    <h1><a class="site-logo" href="index.html">humane.directory</a></h1>
-    <p>A curated list of 100 personal websites with RSS feeds. <a href="about.html">/about</a> </p>
+  <header class="page-header">
+    <div class="page-header-copy">
+      <h1><a class="site-logo" href="index.html">humane.directory</a></h1>
+      <p>A curated list of personal websites that are:</p>
+      <ul class="header-list">
+        <li>text-oriented</li>
+        <li>updated regularly</li>
+        <li>published with RSS/Atom feeds</li>
+        <li>written by thoughtful human beings</li>
+      </ul>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav-list">
+        <li><a href="about.html">/about</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav id="tag-nav"></nav>
+  <nav id="tag-nav" aria-label="Filter websites"></nav>
 
   <main id="site-list"></main>
 
