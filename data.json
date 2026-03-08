@@ -24,7 +24,21 @@
     "name": "James",
     "url": "https://jamesg.blog/",
     "feed": "https://jamesg.blog/feeds/posts.xml",
-    "description": "Blogs about indieweb, tech, and other small things he observes",
+    "description": "Blogs about indieweb, tech, and other small things he observes.",
+    "tags": ["tech", "blogging"]
+  },
+  {
+    "name": "Manuel Moreale",
+    "url": "https://manuelmoreale.com/",
+    "feed": "https://manuelmoreale.com/feed",
+    "description": "Creator of the People and Blogs series. Writes about the web, tech, little observations.",
+    "tags": ["tech", "blogging"]
+  },
+  {
+    "name": "Rohit Kumar",
+    "url": "https://rohit.online/",
+    "feed": "https://rohit.online/feed",
+    "description": "It's me. Creator of humane.directory.",
     "tags": ["tech", "blogging"]
   }
 ]
