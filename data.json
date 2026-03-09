@@ -88,6 +88,118 @@
     "url": "https://www.jefftk.com/",
     "feed": "https://www.jefftk.com/news.rss",
     "description": "A tech guy who often writes about topics nobody writes about.",
+    "tags": ["tech", "effective altruism"]
+  },
+  {
+    "name": "Ana Rodrigues",
+    "url": "https://ohhelloana.blog/",
+    "feed": "https://ohhelloana.blog/feed.xml",
+    "description": "A tech girl who talks about frontend, web, and personal websites.",
+    "tags": ["tech", "blogging", "web"]
+  },
+  {
+    "name": "Ploum",
+    "url": "https://ploum.net/",
+    "feed": "https://ploum.net/atom_en.xml",
+    "description": "A writer, engineer, and fan of command line who writes about tech.",
     "tags": ["tech"]
+  },
+  {
+    "name": "Steph Ango",
+    "url": "https://stephango.com/",
+    "feed": "https://stephango.com/feed.xml",
+    "description": "CEO of Obsidian. Writes about software and life.",
+    "tags": ["tech", "life"]
+  },
+  {
+    "name": "Ava",
+    "url": "https://blog.avas.space/",
+    "feed": "https://blog.avas.space/feed/",
+    "description": "Writes about tech, data protection law, her health, and little creative projects.",
+    "tags": ["tech", "life"]
+  },
+  {
+    "name": "Taylor Troesh",
+    "url": "https://taylor.town/",
+    "feed": "https://taylor.town/feed.xml",
+    "description": "Taylor builds fun, little projects and writes about fun, little things.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Shubham Jain",
+    "url": "https://shubhamjain.co/",
+    "feed": "https://shubhamjain.co/rss.xml",
+    "description": "A techie who shares his interesting observations about tech and life.",
+    "tags": ["tech", "life"]
+  },
+  {
+    "name": "Julia Wise",
+    "url": "https://juliawise.net/",
+    "feed": "https://juliawise.net/feed/",
+    "description": "Really thoughful takes on effective altruism, parenting, and more.",
+    "tags": ["life", "parenting", "effective altruism"]
+  },
+  {
+    "name": "Chris",
+    "url": "https://thoughts.uncountable.uk/",
+    "feed": "https://thoughts.uncountable.uk/feed",
+    "description": "Thoughts on web, tech, communities, and more.",
+    "tags": ["web", "mix"]
+  },
+  {
+    "name": "George R.R. Martin",
+    "url": "https://georgerrmartin.com/notablog/",
+    "feed": "https://georgerrmartin.com/notablog/rss/",
+    "description": "Writer of Game of Thrones. On this website, he gives updates about his creations.",
+    "tags": ["writing", "mix"]
+  },
+  {
+    "name": "Cory Doctrow",
+    "url": "https://pluralistic.net/",
+    "feed": "https://pluralistic.net/feed/",
+    "description": "Coined the term enshittification. Writes about technology.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Andrew Conner",
+    "url": "https://andrewconner.com/",
+    "feed": "https://andrewconner.com/rss/",
+    "description": "He talks about ideas, future, meaning, and flourishing.",
+    "tags": ["ideas"]
+  },
+  {
+    "name": "Ankur Sethi",
+    "url": "https://ankursethi.com/",
+    "feed": "https://ankursethi.com/feeds/index.xml",
+    "description": "A computer gremline (in his own words) who mostly talks about tech.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Cassidy Williams",
+    "url": "https://cassidoo.co/",
+    "feed": "https://cassidoo.co/rss.xml",
+    "description": "A techie who writes about what she's been tinkering with lately.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Paul Stamatiou",
+    "url": "https://paulstamatiou.com/",
+    "feed": "https://paulstamatiou.com/posts.xml",
+    "description": "A designer who likes to talk about products and the digital world.",
+    "tags": ["tech"]
+  },
+  {
+    "name": "Lars-Christian Simonsen",
+    "url": "https://lars-christian.com/",
+    "feed": "https://lars-christian.com/feed.xml",
+    "description": "Writes his obserations about the little things in Life.",
+    "tags": ["life", "mix"]
+  },
+  {
+    "name": "Hyde",
+    "url": "https://lazybea.rs/",
+    "feed": "https://lazybea.rs/index.xml",
+    "description": "Writes about anything and everything. Makes the web more interesting by engaging with the community.",
+    "tags": ["life", "mix"]
   }
 ]
