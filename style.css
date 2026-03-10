@@ -159,40 +159,39 @@ button:disabled {
   margin-bottom: 2rem;
 }
 
-.download-fieldset {
+.download-section {
   margin: 0;
-  padding: 0;
-  border: 0;
 }
 
-.download-fieldset + .download-fieldset {
-  margin-top: 1.75rem;
+.download-section + .download-section {
+  margin-top: 1rem;
 }
 
 .download-filter-sticky {
   position: sticky;
   top: 0;
   background: #fff;
-  padding: 0.75rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid #ccc;
   z-index: 10;
 }
 
-.download-filter-sticky legend {
-  display: block;
-  width: 100%;
+.download-section-heading {
+  font-weight: bold;
   margin: 0;
-  padding: 0 0 0.75rem;
-  background: #fff;
 }
 
-.download-fieldset legend {
-  font-weight: bold;
-  margin-bottom: 0.75rem;
+.download-feed-section {
+  padding-top: 0.85rem;
 }
 
 .download-filter-controls {
+  padding-top: 1rem;
   line-height: 2.2;
+}
+
+.download-feed-controls {
+  padding-top: 1.6rem;
 }
 
 .download-help {

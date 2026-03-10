@@ -44,8 +44,8 @@
     </section>
 
     <form class="download-form" id="download-form">
-      <fieldset class="download-fieldset download-filter-sticky">
-        <legend>Filters:</legend>
+      <div class="download-section download-filter-sticky">
+        <h3 class="download-section-heading">Filters:</h3>
 
         <div class="download-filter-controls">
           <label class="folder-option" for="select-all">
@@ -55,18 +55,22 @@
 
           <div class="folder-options" id="folder-options"></div>
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset class="download-fieldset">
-        <legend>Choose individual feeds:</legend>
+      <div class="download-section download-feed-section">
+        <h3 class="download-section-heading">Choose individual feeds:</h3>
 
-        <label class="feed-option" for="select-visible-feeds">
-          <input type="checkbox" id="select-visible-feeds" checked>
-          <span>All visible feeds</span>
-        </label>
+        <div class="download-feed-controls">
+          <label class="feed-option" for="select-visible-feeds">
+            <input type="checkbox" id="select-visible-feeds" checked>
+            <span class="feed-option-copy">
+              <span class="feed-option-name">All visible feeds</span>
+            </span>
+          </label>
 
-        <div class="feed-options" id="feed-options"></div>
-      </fieldset>
+          <div class="feed-options" id="feed-options"></div>
+        </div>
+      </div>
 
       <button class="download-button" id="download-button" type="submit" disabled>Download OPML</button>
       <p class="download-status" id="download-status" aria-live="polite"></p>
@@ -241,7 +245,7 @@
 
       selectVisibleFeedsCheckbox.disabled = visibleFeeds.length === 0;
       selectVisibleFeedsCheckbox.checked = visibleFeeds.length > 0 && selectedVisibleFeedCount === visibleFeeds.length;
-      selectVisibleFeedsCheckbox.indeterminate = selectedVisibleFeedCount > 0 && selectedVisibleFeedCount < visibleFeeds.length;
+      selectVisibleFeedsCheckbox.indeterminate = false;
 
       document.querySelectorAll('[data-feed-id]').forEach((checkbox) => {
         checkbox.checked = selectedFeedIds.has(checkbox.dataset.feedId);
