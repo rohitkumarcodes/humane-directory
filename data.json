@@ -201,5 +201,12 @@
     "feed": "https://lazybea.rs/index.xml",
     "description": "Writes about anything and everything. Makes the web more interesting by engaging with the community.",
     "tags": ["life", "mix"]
+  },
+  {
+    "name": "Martin Alderson",
+    "url": "https://martinalderson.com/",
+    "feed": "https://martinalderson.com/feed.xml",
+    "description": "Takes on software without adjectives and adverbs.",
+    "tags": ["tech", "software"]
   }
 ]
