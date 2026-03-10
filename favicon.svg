@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="100%" height="100%">
+  <style>
+    .logo-bracket {
+      fill: #111111;
+    }
+
+    .logo-mark {
+      stroke: #111111;
+    }
+
+    .logo-dot {
+      fill: #111111;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .logo-bracket {
+        fill: #e0e0e0;
+      }
+
+      .logo-mark {
+        stroke: #e0e0e0;
+      }
+
+      .logo-dot {
+        fill: #e0e0e0;
+      }
+    }
+  </style>
+
+  <text class="logo-bracket" x="9" y="62" font-family="Georgia, serif" font-size="54">&lt;</text>
+  <text class="logo-bracket" x="59" y="62" font-family="Georgia, serif" font-size="54">&gt;</text>
+
+  <g class="logo-mark" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle class="logo-dot" cx="48" cy="28" r="5.5" stroke="none"/>
+    <path d="M 48 38 C 38 48, 53 66, 43 82 M 48 55 C 63 60, 63 73, 58 82" />
+    <path d="M 30 34 C 38 42, 58 42, 66 34" />
+  </g>
+</svg>

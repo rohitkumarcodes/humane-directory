@@ -1,0 +1,68 @@
+#tag-nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+  line-height: 2.5;
+  z-index: 10;
+}
+
+.tag-btn {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.tag-btn:disabled {
+  cursor: default;
+}
+
+.site-item {
+  margin-bottom: 2.5rem;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 0.4rem;
+}
+
+.site-item h3 {
+  font-size: 1.45rem;
+  margin: 0;
+}
+
+.favicon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.rss-btn {
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  line-height: 1.2;
+  align-self: center;
+}
+
+.site-item p {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  #tag-nav {
+    background-color: #121212;
+    border-bottom-color: #333;
+  }
+
+  .tag-btn:disabled {
+    background-color: #121212;
+    color: #777;
+    border-color: #333;
+  }
+}

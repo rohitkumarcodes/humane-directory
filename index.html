@@ -22,7 +22,9 @@
   <meta name="twitter:description" content="A curated list of personal websites with RSS and Atom feeds.">
   <meta name="twitter:image" content="https://humane.directory/new-og-image.png">
   <meta name="twitter:image:alt" content="The humane.directory logo, title, and the site's opening bullet list.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
 
@@ -48,134 +50,6 @@
   <nav id="tag-nav" aria-label="Filter websites"></nav>
 
   <main id="site-list"></main>
-
-<script>
-    // 1. APP STATE & DOM ELEMENTS
-    let websites = [];
-    let currentFilter = 'all';
-    let sortedTags = [];
-    
-    const listContainer = document.getElementById('site-list');
-    const tagNav = document.getElementById('tag-nav');
-
-    // 2. SHUFFLE DATA
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
-
-    // 3. RENDER NAVIGATION
-    function renderTags() {
-      tagNav.innerHTML = '<strong>Filter: </strong>';
-      
-      const isAllActive = currentFilter === 'all';
-      const allDisabled = isAllActive ? `disabled` : ``;
-      tagNav.innerHTML += `<button class="tag-btn" data-tag="all" ${allDisabled}>All (${websites.length})</button>`;
-      
-      sortedTags.forEach(tag => {
-        const count = websites.filter(s => s.tags.includes(tag)).length;
-        const isActive = currentFilter === tag;
-        const disabledAttr = isActive ? `disabled` : ``;
-        
-        tagNav.innerHTML += `<button class="tag-btn" data-tag="${tag}" ${disabledAttr}>${tag} (${count})</button>`;
-      });
-
-      document.querySelectorAll('.tag-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          window.scrollTo({ top: 0, behavior: 'smooth' }); 
-          currentFilter = e.currentTarget.dataset.tag;
-          renderTags(); 
-          renderList(); 
-        });
-      });
-    }
-
-    // 4. RENDER WEBSITE LIST
-    function renderList() {
-      listContainer.innerHTML = '';
-      
-      const filteredSites = currentFilter === 'all' 
-        ? websites 
-        : websites.filter(site => site.tags.includes(currentFilter));
-
-      filteredSites.forEach(site => {
-        let domain = "";
-        let outboundUrl = site.url; 
-        
-        try {
-          const urlObj = new URL(site.url);
-          domain = urlObj.hostname;
-          urlObj.searchParams.append('ref', 'humane.directory'); 
-          outboundUrl = urlObj.toString();
-        } catch (e) {
-          console.warn("Invalid URL found:", site.url);
-        }
-
-        const faviconHtml = domain ? `<img src="https://icons.duckduckgo.com/ip3/${domain}.ico" class="favicon" alt="">` : ``;
-        const feedHtml = site.feed ? `<button class="rss-btn" data-feed="${site.feed}" title="Copy RSS feed link to clipboard">Copy RSS</button>` : ``;
-
-        listContainer.innerHTML += `
-          <article class="site-item">
-            <div class="site-header">
-              ${faviconHtml}
-              <h3><a href="${outboundUrl}" target="_blank" rel="noopener" title="Visit ${site.name}">${site.name}</a></h3>
-              ${feedHtml}
-            </div>
-            <p>${site.description}</p>
-          </article>
-        `;
-      });
-    }
-
-    // 5. COPY TO CLIPBOARD LOGIC
-    listContainer.addEventListener('click', async (e) => {
-      if (e.target.classList.contains('rss-btn')) {
-        const feedUrl = e.target.dataset.feed;
-        const btn = e.target;
-        
-        try {
-          await navigator.clipboard.writeText(feedUrl);
-          btn.textContent = "Copied!";
-          setTimeout(() => {
-            btn.textContent = "Copy RSS";
-          }, 2000);
-        } catch (err) {
-          btn.textContent = "Error";
-        }
-      }
-    });
-
-    // 6. INITIALIZE APP (FETCH DATA)
-    async function loadDirectory() {
-      try {
-        const response = await fetch('data.json');
-        
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        
-        websites = await response.json();
-        
-        // Setup data after it loads
-        shuffleArray(websites);
-        
-        const allTags = new Set();
-        websites.forEach(site => site.tags.forEach(tag => allTags.add(tag)));
-        sortedTags = Array.from(allTags).sort();
-
-        // Render everything
-        renderTags();
-        renderList();
-        
-      } catch (error) {
-        console.error("Failed to load directory data:", error);
-        listContainer.innerHTML = '<p style="color: red;">Error: Could not load the directory data. If you are viewing this locally on your computer, you may need a local web server to fetch the JSON file.</p>';
-      }
-    }
-
-    loadDirectory();
-  </script>
+  <script type="module" src="scripts/pages/home.js"></script>
 </body>
 </html>
