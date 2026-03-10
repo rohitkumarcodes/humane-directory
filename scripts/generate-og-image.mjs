@@ -1,5 +1,4 @@
 import fs from 'node:fs/promises';
-import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -8,6 +7,11 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const logoPath = path.join(rootDir, 'logo.svg');
 const ogSvgPath = path.join(rootDir, 'new-og-image.svg');
 const ogPngPath = path.join(rootDir, 'new-og-image.png');
+const chromeCandidates = [
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/Applications/Chromium.app/Contents/MacOS/Chromium',
+  '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge'
+];
 
 function parseLogoSvg(logoSvgSource) {
   const svgMatch = logoSvgSource.match(/<svg[^>]*viewBox="([^"]+)"[^>]*>([\s\S]*)<\/svg>/i);
@@ -112,6 +116,17 @@ function runCommand(command, args, errorMessage) {
   return result;
 }
 
+function findBrowserExecutable() {
+  return chromeCandidates.find((candidate) => {
+    const result = spawnSync('test', ['-x', candidate], {
+      cwd: rootDir,
+      encoding: 'utf8'
+    });
+
+    return result.status === 0;
+  });
+}
+
 async function main() {
   const logoSvgSource = await fs.readFile(logoPath, 'utf8');
   const { bodyMarkup } = parseLogoSvg(logoSvgSource);
@@ -121,23 +136,26 @@ async function main() {
 
   await fs.writeFile(ogSvgPath, ogSvgSource);
 
-  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'humane-og-'));
-  const quickLookOutputPath = path.join(tempDir, `${path.basename(ogSvgPath)}.png`);
+  const browserPath = findBrowserExecutable();
 
-  try {
-    runCommand(
-      'qlmanage',
-      ['-t', '-s', '1200', '-o', tempDir, ogSvgPath],
-      'Quick Look failed to render the OG image SVG.'
+  if (!browserPath) {
+    throw new Error(
+      'Could not find a supported Chromium-based browser for OG image rendering. Install Google Chrome, Chromium, or Microsoft Edge.'
     );
-    runCommand(
-      'magick',
-      [quickLookOutputPath, '-crop', '1200x630+0+0', '+repage', ogPngPath],
-      'ImageMagick failed to crop the rendered OG image.'
-    );
-  } finally {
-    await fs.rm(tempDir, { recursive: true, force: true });
   }
+
+  runCommand(
+    browserPath,
+    [
+      '--headless=new',
+      '--disable-gpu',
+      '--hide-scrollbars',
+      '--window-size=1200,630',
+      `--screenshot=${ogPngPath}`,
+      `file://${ogSvgPath}`
+    ],
+    'Headless browser failed to render the OG image.'
+  );
 
   console.log('Generated new-og-image.svg and new-og-image.png');
 }
