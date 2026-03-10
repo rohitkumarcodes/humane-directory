@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -27,13 +28,21 @@ function parseLogoSvg(logoSvgSource) {
   };
 }
 
-function buildOgSvg({ logoStyle, logoMarkup }) {
+function inlineOgLogoMarkup(logoMarkup) {
+  return logoMarkup
+    .replace(/\sclass="logo-bracket"/g, ' fill="#111111"')
+    .replace(/\sclass="logo-dot"/g, ' fill="#111111"')
+    .replace(
+      /<g\s+class="logo-mark"[^>]*>/i,
+      '<g stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+    );
+}
+
+function buildOgSvg({ logoMarkup }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">humane.directory open graph image</title>
   <desc id="desc">The humane.directory logo, title, and the site's opening bullet list.</desc>
   <style>
-    ${logoStyle}
-
     .og-bg {
       fill: #f7f4ef;
     }
@@ -86,31 +95,48 @@ function buildOgSvg({ logoStyle, logoMarkup }) {
 `;
 }
 
-async function main() {
-  const logoSvgSource = await fs.readFile(logoPath, 'utf8');
-  const { style, bodyMarkup } = parseLogoSvg(logoSvgSource);
-  const ogSvgSource = buildOgSvg({
-    logoStyle: style,
-    logoMarkup: bodyMarkup
-  });
-
-  await fs.writeFile(ogSvgPath, ogSvgSource);
-
-  const renderResult = spawnSync('magick', [ogSvgPath, ogPngPath], {
+function runCommand(command, args, errorMessage) {
+  const result = spawnSync(command, args, {
     cwd: rootDir,
     encoding: 'utf8'
   });
 
-  if (renderResult.error) {
-    throw new Error(`Failed to run ImageMagick: ${renderResult.error.message}`);
+  if (result.error) {
+    throw new Error(`${errorMessage}: ${result.error.message}`);
   }
 
-  if (renderResult.status !== 0) {
-    throw new Error(renderResult.stderr.trim() || 'ImageMagick failed to render the OG image.');
+  if (result.status !== 0) {
+    throw new Error(result.stderr.trim() || errorMessage);
   }
 
-  if (renderResult.stderr.trim()) {
-    console.warn(renderResult.stderr.trim());
+  return result;
+}
+
+async function main() {
+  const logoSvgSource = await fs.readFile(logoPath, 'utf8');
+  const { bodyMarkup } = parseLogoSvg(logoSvgSource);
+  const ogSvgSource = buildOgSvg({
+    logoMarkup: inlineOgLogoMarkup(bodyMarkup)
+  });
+
+  await fs.writeFile(ogSvgPath, ogSvgSource);
+
+  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'humane-og-'));
+  const quickLookOutputPath = path.join(tempDir, `${path.basename(ogSvgPath)}.png`);
+
+  try {
+    runCommand(
+      'qlmanage',
+      ['-t', '-s', '1200', '-o', tempDir, ogSvgPath],
+      'Quick Look failed to render the OG image SVG.'
+    );
+    runCommand(
+      'magick',
+      [quickLookOutputPath, '-crop', '1200x630+0+0', '+repage', ogPngPath],
+      'ImageMagick failed to crop the rendered OG image.'
+    );
+  } finally {
+    await fs.rm(tempDir, { recursive: true, force: true });
   }
 
   console.log('Generated new-og-image.svg and new-og-image.png');

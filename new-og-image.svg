@@ -2,32 +2,6 @@
   <title id="title">humane.directory open graph image</title>
   <desc id="desc">The humane.directory logo, title, and the site's opening bullet list.</desc>
   <style>
-    .logo-bracket {
-      fill: #111111;
-    }
-
-    .logo-mark {
-      stroke: #111111;
-    }
-
-    .logo-dot {
-      fill: #111111;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .logo-bracket {
-        fill: #e0e0e0;
-      }
-
-      .logo-mark {
-        stroke: #e0e0e0;
-      }
-
-      .logo-dot {
-        fill: #e0e0e0;
-      }
-    }
-
     .og-bg {
       fill: #f7f4ef;
     }
@@ -59,11 +33,11 @@
   <rect class="og-bg" width="1200" height="630" rx="0" ry="0" />
 
   <g transform="translate(78 58) scale(1.45)">
-    <text class="logo-bracket" x="25" y="80" font-family="Georgia, serif" font-size="60">&lt;</text>
-  <text class="logo-bracket" x="110" y="80" font-family="Georgia, serif" font-size="60">&gt;</text>
+    <text fill="#111111" x="25" y="80" font-family="Georgia, serif" font-size="60">&lt;</text>
+  <text fill="#111111" x="110" y="80" font-family="Georgia, serif" font-size="60">&gt;</text>
 
-  <g class="logo-mark" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <circle class="logo-dot" cx="80" cy="35" r="4.5" stroke="none"/>
+  <g stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle fill="#111111" cx="80" cy="35" r="4.5" stroke="none"/>
 
     <path d="M 80 45 C 70 55, 85 75, 75 95 M 80 65 C 95 70, 95 85, 90 95" />
 

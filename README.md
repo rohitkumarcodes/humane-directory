@@ -41,6 +41,8 @@ To regenerate both the editable source SVG and the published PNG:
 node scripts/generate-og-image.mjs
 ```
 
+The PNG generation step uses macOS Quick Look plus ImageMagick so the checked-in OG image matches the browser-rendered `logo.svg`.
+
 ## `data.json` contract
 `data.json` must be an array of objects with:
 - `name`: non-empty string
