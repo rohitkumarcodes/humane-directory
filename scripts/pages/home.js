@@ -103,24 +103,24 @@ function createSiteItem(site) {
 }
 
 function renderTags(state, tagNav) {
-  const toolbar = document.createElement('div');
-  toolbar.className = 'filter-toolbar';
+  const wrapper = document.createElement('div');
+  wrapper.className = 'tag-nav-layout';
 
-  const label = document.createElement('span');
-  label.className = 'filter-label';
+  const label = document.createElement('strong');
+  label.className = 'tag-nav-label';
   label.textContent = 'Filter:';
-  toolbar.appendChild(label);
+  wrapper.appendChild(label);
 
-  const chipList = document.createElement('div');
-  chipList.className = 'tag-chip-list';
-  chipList.appendChild(createTagButton('all', state.websites.length, state.currentFilter === 'all'));
+  const buttonGroup = document.createElement('div');
+  buttonGroup.className = 'tag-nav-options';
+  buttonGroup.appendChild(createTagButton('all', state.websites.length, state.currentFilter === 'all'));
 
   state.sortedTags.forEach((tag) => {
-    chipList.appendChild(createTagButton(tag, state.tagCounts.get(tag) || 0, state.currentFilter === tag));
+    buttonGroup.appendChild(createTagButton(tag, state.tagCounts.get(tag) || 0, state.currentFilter === tag));
   });
 
-  toolbar.appendChild(chipList);
-  tagNav.replaceChildren(toolbar);
+  wrapper.appendChild(buttonGroup);
+  tagNav.replaceChildren(wrapper);
 }
 
 function renderSites(state, listContainer) {

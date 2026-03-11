@@ -1,57 +1,26 @@
-:root {
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 2.5rem;
-  --border-subtle: #ccc;
-  --text-muted: #666;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   max-width: 65ch;
-  margin: var(--space-6) auto;
-  padding: 0 var(--space-4);
+  margin: 2rem auto;
+  padding: 0 1rem;
   line-height: 1.5;
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-.page-header {
-  display: grid;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
-}
-
-.page-header h1 {
-  margin: 0;
-}
-
-.page-header-copy {
-  display: grid;
-  gap: var(--space-2);
+header {
+  margin-bottom: 2rem;
 }
 
 .page-header-copy p {
-  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .header-list {
-  display: grid;
-  gap: var(--space-1);
-  margin: 0 0 0 1.25rem;
+  margin: 0 0 1rem 1.25rem;
   padding: 0;
 }
 
 .header-list li + li {
-  margin-top: 0;
+  margin-top: 0.2rem;
 }
 
 .site-logo {
@@ -75,14 +44,14 @@ body {
 }
 
 .site-nav {
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: var(--space-4);
+  margin-top: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }
 
 .site-nav-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -105,16 +74,8 @@ body {
   display: block;
   width: min(100%, 220px);
   height: auto;
-  margin: var(--space-4) 0 var(--space-5);
+  margin: 1rem 0 1.5rem;
   border-radius: 12px;
-}
-
-.page-header + main > :first-child {
-  margin-top: 0;
-}
-
-.page-header + main > :last-child {
-  margin-bottom: 0;
 }
 
 .page-error {
