@@ -5,13 +5,3 @@ export function getDomain(url) {
     return '';
   }
 }
-
-export function addReferralParam(url, refValue = 'humane.directory') {
-  try {
-    const outboundUrl = new URL(url);
-    outboundUrl.searchParams.append('ref', refValue);
-    return outboundUrl.toString();
-  } catch (error) {
-    return url;
-  }
-}

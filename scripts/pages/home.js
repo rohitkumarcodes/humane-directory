@@ -1,8 +1,7 @@
 import { loadDirectoryData } from '../lib/data.js';
-import { addReferralParam, getDomain } from '../lib/url.js';
+import { getDomain } from '../lib/url.js';
 
 const DIRECTORY_DATA_URL = 'data.json';
-const REFERRAL_SOURCE = 'humane.directory';
 const LOAD_ERROR_MESSAGE = 'Error: Could not load the directory data. If you are viewing this locally on your computer, you may need a local web server to fetch the JSON file.';
 
 function shuffleInPlace(items) {
@@ -75,7 +74,7 @@ function createSiteItem(site) {
 
   const title = document.createElement('h3');
   const link = document.createElement('a');
-  link.href = addReferralParam(site.url, REFERRAL_SOURCE);
+  link.href = site.url;
   link.target = '_blank';
   link.rel = 'noopener';
   link.title = `Visit ${site.name}`;
