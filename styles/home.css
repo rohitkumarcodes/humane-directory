@@ -1,27 +1,30 @@
+.page-header {
+  margin-bottom: 0;
+}
+
 #tag-nav {
   position: sticky;
   top: 0;
   background: #fff;
-  padding: 1rem 0;
+  padding: 2rem 0;
   border-bottom: 1px solid #ccc;
   margin-bottom: 2rem;
   z-index: 10;
 }
 
 .tag-nav-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.5rem;
+  align-items: baseline;
 }
 
 .tag-nav-label {
-  flex: 0 0 auto;
-  padding-top: 0.3rem;
+  line-height: 1.2;
 }
 
 .tag-nav-options {
   display: flex;
-  flex: 1 1 auto;
   flex-wrap: wrap;
   gap: 0.5rem;
   min-width: 0;
@@ -74,13 +77,9 @@
 
 @media (max-width: 40rem) {
   .tag-nav-layout {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.35rem;
-  }
-
-  .tag-nav-label {
-    padding-top: 0;
+    grid-template-columns: 1fr;
+    row-gap: 0.35rem;
+    align-items: start;
   }
 
   .tag-nav-options {
