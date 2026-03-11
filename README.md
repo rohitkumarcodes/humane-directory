@@ -32,17 +32,6 @@ node scripts/check-data.mjs
 node scripts/check-pages.mjs
 ```
 
-## OG image
-The open graph image is generated from the current `logo.svg`.
-
-To regenerate both the editable source SVG and the published PNG:
-
-```bash
-node scripts/generate-og-image.mjs
-```
-
-The PNG generation step uses a local Chromium-based browser in headless mode so the checked-in OG image matches the browser-rendered `logo.svg`.
-
 ## `data.json` contract
 `data.json` must be an array of objects with:
 - `name`: non-empty string
