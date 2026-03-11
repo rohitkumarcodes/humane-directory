@@ -1,38 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">humane.directory open graph image</title>
-  <desc id="desc">The humane.directory logo, title, and the site's opening bullet list.</desc>
+  <desc id="desc">The humane.directory logo, title, and a short description of a directory of personal websites with RSS and Atom feeds.</desc>
   <style>
     .og-bg {
       fill: #f7f4ef;
     }
 
+    .og-panel {
+      fill: #fbfaf7;
+      stroke: rgba(17, 17, 17, 0.14);
+      stroke-width: 2;
+    }
+
     .og-title {
       fill: #111111;
       font-family: Arial, sans-serif;
-      font-size: 72px;
+      font-size: 64px;
       font-weight: 700;
+      text-anchor: middle;
     }
 
     .og-intro {
       fill: #111111;
       font-family: Arial, sans-serif;
-      font-size: 34px;
+      font-size: 31px;
+      text-anchor: middle;
     }
 
-    .og-bullet {
+    .og-chip {
+      fill: rgba(17, 17, 17, 0.045);
+      stroke: rgba(17, 17, 17, 0.14);
+      stroke-width: 1.5;
+    }
+
+    .og-chip-text {
       fill: #111111;
       font-family: Arial, sans-serif;
-      font-size: 34px;
-    }
-
-    .og-bullet-dot {
-      fill: #111111;
+      font-size: 24px;
+      font-weight: 600;
+      text-anchor: middle;
     }
   </style>
 
   <rect class="og-bg" width="1200" height="630" rx="0" ry="0" />
+  <rect class="og-panel" x="190" y="72" width="820" height="486" rx="38" ry="38" />
 
-  <g transform="translate(78 58) scale(1.45)">
+  <g transform="translate(476 100) scale(1.55)">
     <text fill="#111111" x="25" y="80" font-family="Georgia, serif" font-size="60">&lt;</text>
   <text fill="#111111" x="110" y="80" font-family="Georgia, serif" font-size="60">&gt;</text>
 
@@ -45,18 +58,18 @@
   </g>
   </g>
 
-  <text class="og-title" x="320" y="152">humane.directory</text>
-  <text class="og-intro" x="80" y="265">A curated list of personal websites that are:</text>
+  <text class="og-title" x="600" y="286">humane.directory</text>
+  <text class="og-intro" x="600" y="350">A curated list of personal websites</text>
 
-  <circle class="og-bullet-dot" cx="104" cy="334" r="7" />
-  <text class="og-bullet" x="128" y="345">text-oriented</text>
+  <rect class="og-chip" x="370" y="392" width="220" height="52" rx="26" ry="26" />
+  <text class="og-chip-text" x="480" y="425">Text-first</text>
 
-  <circle class="og-bullet-dot" cx="104" cy="394" r="7" />
-  <text class="og-bullet" x="128" y="405">updated regularly</text>
+  <rect class="og-chip" x="610" y="392" width="220" height="52" rx="26" ry="26" />
+  <text class="og-chip-text" x="720" y="425">Updated often</text>
 
-  <circle class="og-bullet-dot" cx="104" cy="454" r="7" />
-  <text class="og-bullet" x="128" y="465">published with RSS/Atom feeds</text>
+  <rect class="og-chip" x="370" y="462" width="220" height="52" rx="26" ry="26" />
+  <text class="og-chip-text" x="480" y="495">RSS / Atom</text>
 
-  <circle class="og-bullet-dot" cx="104" cy="514" r="7" />
-  <text class="og-bullet" x="128" y="525">written by thoughtful human beings</text>
+  <rect class="og-chip" x="610" y="462" width="220" height="52" rx="26" ry="26" />
+  <text class="og-chip-text" x="720" y="495">Human-made</text>
 </svg>
