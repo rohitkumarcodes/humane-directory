@@ -16,7 +16,7 @@ A small static directory of personal websites with RSS/Atom feeds.
 Run a simple local server from the repo root:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
 Then open:

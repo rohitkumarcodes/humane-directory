@@ -208,5 +208,33 @@
     "feed": "https://martinalderson.com/feed.xml",
     "description": "Takes on software without adjectives and adverbs.",
     "tags": ["tech", "software"]
+  },
+  {
+    "name": "Mandy Brown",
+    "url": "https://martinalderson.com/",
+    "feed": "https://martinalderson.com/feed.xml",
+    "description": "A project to explore the intersections of reading, culture, technology, and the nature of work.",
+      "tags": ["life", "culture", "reading"]
+  },
+  {
+  	"name": "Elizabeth Tai",
+  	"url": "https://elizabethtai.com/",
+  	"feed": "https://elizabethtai.com/feed/",
+  	"description": "She writes about the Indieweb, knowledge management and anything she’s obsessed about.",
+  	"tags": ["indieweb", "tech"]
+  },
+  {
+    "name": "Siddharth",
+    "url": "https://ssiddharth.com/",
+    "feed": "https://ssiddharth.com/blog/rss.xml",
+    "description": "Personal pieces of rambling reflections and rants, tangential thoughts and tirades.",
+    "tags": ["tech"]
+  },
+  {
+  	"name": "Kev Quirk",
+  	"url": "https://kevquirk.com/",
+  	"feed": "https://kevquirk.com/feed",
+  	"description": "Create tools for the web. Writes about web and tech.",
+  	"tags": ["indieweb", "tech"]
   }
 ]
