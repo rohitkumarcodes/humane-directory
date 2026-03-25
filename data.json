@@ -234,7 +234,14 @@
   	"name": "Kev Quirk",
   	"url": "https://kevquirk.com/",
   	"feed": "https://kevquirk.com/feed",
-  	"description": "Create tools for the web. Writes about web and tech.",
+  	"description": "Creates tools for the web. Writes about web and tech.",
   	"tags": ["indieweb", "tech"]
+  },
+  {
+  	"name": "Steve Krouse",
+  	"url": "https://stevekrouse.com/",
+  	"feed": "https://stevekrouse.com/rss.xml",
+  	"description": "Die hard programmer. Likes to share his solid opinions about the tech world.",
+  	"tags": ["programming", "tech"]
   }
 ]
